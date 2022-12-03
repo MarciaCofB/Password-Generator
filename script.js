@@ -88,27 +88,44 @@ var upperCasedCharacters = [
   'Z'
 ];
 
+var char = ''
+var Upcase = ''
+var Lowcase = ''
+var num = ''
+var spec = ''
+
 // Function to prompt user for password options
 function getPasswordOptions() {
-  var char = prompt('How many characters does the password need to be(can be between 10 to 64 characters')
-  //let char = confirm("Are you sure to execute this action?");
-  //console.log(isExecuted); // OK = true, Cancel = false
+  char= prompt('How many characters does the password need to be(can be between 10 to 64 characters')
 
-  var Upcase = alert('Should the password have upper case characters?')
-  var Lowcase = prompt('Should the password have lower case characters?')
-  var num = prompt('Should the password have numbers?')
-  var spec = prompt('Should the password have special characters')
+  Upcase= confirm('Click OK if the password should contain upper case characters and Cancel if not')
+  Lowcase= confirm('Click OK if the password should contain lower case characters and Cancel if not')
+  num= confirm('Click OK if the password should contain numbers and Cancel if not')
+  var spec= confirm('Click OK if the password should contain upper case characters and Cancel if not')
 
 }
 
+//make an array of the inputs and then write a for loop to generate a character for each until the number of characters are completed
 // Function for getting a random element from an array
 function getRandom(arr) {
+  console.log(arr[(Math.floor(Math.random() * arr.length))])
 
 }
 
 // Function to generate password with user input
 function generatePassword() {
+  for (var i = 0; i < 10; i++) { 
+    if (Upcase === true){
+      getRandom(upperCasedCharacters)
 
+    }
+    else if (Lowcase === true){
+      getRandom(lowerCasedCharacters)
+
+    }
+
+  
+  }
 }
 
 // Get references to the #generate element
@@ -126,4 +143,20 @@ function writePassword() {
 generateBtn.addEventListener('click', writePassword);
 
 
-getPasswordOptions()
+getPasswordOptions();
+
+console.log(char)
+console.log(Upcase)
+console.log(Lowcase)
+console.log(num)
+console.log(spec)
+
+
+
+
+//pseudo code
+/* i need to collect the inputs from the end user for the criteria for the password (Done)
+then store these inputs (Done)
+then generate characters based on these inputs
+then put the characters together in one string
+then print the string for the end user when they click the generate button */
