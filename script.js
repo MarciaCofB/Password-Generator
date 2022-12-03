@@ -93,18 +93,38 @@ var Upcase = ''
 var Lowcase = ''
 var num = ''
 var spec = ''
+var charTypeNum = 0
 
 // Function to prompt user for password options
 function getPasswordOptions() {
   char= prompt('How many characters does the password need to be(can be between 10 to 64 characters')
-
+  
   Upcase= confirm('Click OK if the password should contain upper case characters and Cancel if not')
-  Lowcase= confirm('Click OK if the password should contain lower case characters and Cancel if not')
-  num= confirm('Click OK if the password should contain numbers and Cancel if not')
-  var spec= confirm('Click OK if the password should contain upper case characters and Cancel if not')
+  if (Upcase === true){
+    charTypeNum += 1
+  }
+ 
 
+  Lowcase= confirm('Click OK if the password should contain lower case characters and Cancel if not')
+  if (Lowcase === true){
+    charTypeNum += 1
+  }
+ 
+
+  num= confirm('Click OK if the password should contain numbers and Cancel if not')
+  if (num === true){
+    charTypeNum += 1
+  }
+ 
+
+  var spec= confirm('Click OK if the password should contain special characters and Cancel if not')
+  if (spec === true){
+    charTypeNum += 1
+  }
+ 
 }
 
+console.log(charTypeNum)
 //make an array of the inputs and then write a for loop to generate a character for each until the number of characters are completed
 // Function for getting a random element from an array
 function getRandom(arr) {
@@ -114,19 +134,48 @@ function getRandom(arr) {
 
 // Function to generate password with user input
 function generatePassword() {
-  for (var i = 0; i < 10; i++) { 
-    if (Upcase === true){
+  for (var i = 0; i < char;) { 
+    
+    console.log(i)
+    if (Upcase === true && i < 10){
       getRandom(upperCasedCharacters)
+      i++
+      
 
     }
-    else if (Lowcase === true){
+
+    console.log(i)
+    if (Lowcase === true){
       getRandom(lowerCasedCharacters)
+      i++
+      
 
-    }
+    
+  }
+
+  console.log(i)
+  if (Lowcase === true && i < 10){
+    getRandom(numericCharacters)
+    i++
+    
+
+  
+}
+
+console.log(i)
+if (Lowcase === true ){
+  getRandom(specialCharacters)
+  i++
+  
+
+
+}
+  
+  }
+  
 
   
   }
-}
 
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
