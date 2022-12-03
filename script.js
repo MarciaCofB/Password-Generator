@@ -93,18 +93,30 @@ var Upcase = ''
 var Lowcase = ''
 var num = ''
 var spec = ''
+var charTypeNum = 0
 
 // Function to prompt user for password options
 function getPasswordOptions() {
   char= prompt('How many characters does the password need to be(can be between 10 to 64 characters')
-
+  
   Upcase= confirm('Click OK if the password should contain upper case characters and Cancel if not')
-  Lowcase= confirm('Click OK if the password should contain lower case characters and Cancel if not')
-  num= confirm('Click OK if the password should contain numbers and Cancel if not')
-  var spec= confirm('Click OK if the password should contain upper case characters and Cancel if not')
+  
+ 
 
+  Lowcase= confirm('Click OK if the password should contain lower case characters and Cancel if not')
+  
+ 
+
+  num= confirm('Click OK if the password should contain numbers and Cancel if not')
+ 
+  
+
+  spec= confirm('Click OK if the password should contain special characters and Cancel if not')
+  
+ 
 }
 
+console.log(charTypeNum)
 //make an array of the inputs and then write a for loop to generate a character for each until the number of characters are completed
 // Function for getting a random element from an array
 function getRandom(arr) {
@@ -114,19 +126,48 @@ function getRandom(arr) {
 
 // Function to generate password with user input
 function generatePassword() {
-  for (var i = 0; i < 10; i++) { 
-    if (Upcase === true){
+  for (var i = 0; i < char;) { 
+    
+   
+    if (Upcase === true && i < char){
       getRandom(upperCasedCharacters)
+      i++
+      
 
     }
-    else if (Lowcase === true){
+
+    
+    if (Lowcase === true && i < char){
       getRandom(lowerCasedCharacters)
+      i++
+      
 
-    }
+    
+  }
+
+ 
+    if (num === true && i < char){
+      getRandom(numericCharacters)
+      i++
+    
+
+  
+}
+
+
+   if (spec === true && i < char ){
+    getRandom(specialCharacters)
+    i++
+  
+
+
+}
+  
+  }
+  
 
   
   }
-}
 
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
