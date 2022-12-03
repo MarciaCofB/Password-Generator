@@ -100,27 +100,19 @@ function getPasswordOptions() {
   char= prompt('How many characters does the password need to be(can be between 10 to 64 characters')
   
   Upcase= confirm('Click OK if the password should contain upper case characters and Cancel if not')
-  if (Upcase === true){
-    charTypeNum += 1
-  }
+  
  
 
   Lowcase= confirm('Click OK if the password should contain lower case characters and Cancel if not')
-  if (Lowcase === true){
-    charTypeNum += 1
-  }
+  
  
 
   num= confirm('Click OK if the password should contain numbers and Cancel if not')
-  if (num === true){
-    charTypeNum += 1
-  }
  
+  
 
-  var spec= confirm('Click OK if the password should contain special characters and Cancel if not')
-  if (spec === true){
-    charTypeNum += 1
-  }
+  spec= confirm('Click OK if the password should contain special characters and Cancel if not')
+  
  
 }
 
@@ -136,16 +128,16 @@ function getRandom(arr) {
 function generatePassword() {
   for (var i = 0; i < char;) { 
     
-    console.log(i)
-    if (Upcase === true && i < 10){
+   
+    if (Upcase === true && i < char){
       getRandom(upperCasedCharacters)
       i++
       
 
     }
 
-    console.log(i)
-    if (Lowcase === true){
+    
+    if (Lowcase === true && i < char){
       getRandom(lowerCasedCharacters)
       i++
       
@@ -153,19 +145,19 @@ function generatePassword() {
     
   }
 
-  console.log(i)
-  if (Lowcase === true && i < 10){
-    getRandom(numericCharacters)
-    i++
+ 
+    if (num === true && i < char){
+      getRandom(numericCharacters)
+      i++
     
 
   
 }
 
-console.log(i)
-if (Lowcase === true ){
-  getRandom(specialCharacters)
-  i++
+
+   if (spec === true && i < char ){
+    getRandom(specialCharacters)
+    i++
   
 
 
