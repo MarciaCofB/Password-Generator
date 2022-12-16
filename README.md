@@ -1,79 +1,76 @@
-# Module 5 Challenge: Password Generator
+# Intermediate Javascript - Password Generator (Assignment for a Front-End Web Development Bootcamp)
 
-## Overview
+This project is a submission for a challenge to create a Random Password generator
+
+
+
+
+# Acceptance Criteria
+Your application must:
+
+Generate a password when the button is clicked.
+
+Present a series of prompts for password criteria:
+
+Length of password:
+
+At least 10 characters but no more than 64.
+
+Character types:
+
+Lowercase
+
+Uppercase
+
+Numeric
+
+Special characters ($@%&*, etc.)
+
+Code should validate for each input and at least one character type should be selected.
+
+Once all prompts are answered, the password should be generated and displayed in an alert or written to the page.
+
+
+# Challenges 
+I struggled for a little while to get the for loop exactly right to ensure that the user enters the appropriate number of characters to be used for a password
+
+
  
-This week’s challenge requires you to create an application that an employee can use to generate a random password based on criteria they’ve selected by modifying starter code. This app will run in the browser, and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean and polished user interface that is responsive, ensuring that it adapts to multiple screen sizes.
+# Things I learned
 
-The password can include special characters. If you’re unfamiliar with these, see this [list of Password Special Characters from the OWASP Foundation](https://www.owasp.org/index.php/Password_special_characters).
+One of my biggest takeaways from this challenge is that you have to be careful about where you define your variables as there was a point where I had defined a variable both in and outside of a function and it stopped the 'generate password' button from working. 
 
-## Instructions
-
-The following image shows the web application's appearance and functionality:
-
-![password generator demo](./assets/05-javascript-challenge-demo.png)
+https://marciacofb.github.io/SEO-Accessibility-Challenge/
 
 
-* Generate a password when the button is clicked
-  * Present a series of prompts for password criteria
-    * Length of password
-      * At least 10 characters but no more than 64.
-    * Character types
-      * Lowercase
-      * Uppercase
-      * Numeric
-      * Special characters ($@%&*, etc)
-  * Code should validate for each input and at least one character type should be selected
-  * Once prompts are answered then the password should be generated and displayed in an alert or written to the page
-
-## Grading Requirements
-
-This challenge is graded based on the following criteria: 
-
-### Technical Acceptance Criteria: 40%
-
-* Satisfies all of the above acceptance criteria plus the following:
-
-  * The challenge should not produce any errors in the console when you inspect it using Chrome DevTools.
-
-### Deployment: 32%
-
-* Application deployed at live URL.
-
-* Application loads with no errors.
-
-* Application GitHub URL submitted.
-
-* GitHub repository that contains application code.
-
-### Application Quality: 15%
-
-* Application user experience is intuitive and easy to navigate.
-
-* Application user interface style is clean and polished.
-
-* Application resembles the mock-up functionality provided in the challenge instructions.
-
-### Repository Quality: 13%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains quality README file with description, screenshot, and link to deployed application.
+![marciacofb github io_SEO-Accessibility-Challenge](https://user-images.githubusercontent.com/110351787/197876540-06a4b955-b083-447f-ac3f-d2368781b815.png)
 
 
-## Review
 
-You are required to submit the following for review:
 
-* The URL of the deployed application.
 
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
+### Review
 
----
 
-© 2022 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+https://marciacofb.github.io/Password-Generator/
+
+https://github.com/MarciaCofB/Password-Generator
+
+
+
+
+ 
+# Contact
+
+If you have any questions, please contact me at: 
+ 
+  Github Profile: https://github.com/MarciaCofB 
+
+  Email:  marciacofiebruce@gmail.com
+
+  
+  
+ 
+
+
+
