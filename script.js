@@ -88,7 +88,7 @@ var upperCasedCharacters = [
   'Z'
 ];
 
-var char = ''
+
 var Upcase = ''
 var Lowcase = ''
 var num = ''
@@ -100,15 +100,26 @@ var password = ''
 
 // Function to prompt user for password options
 function getPasswordOptions() {
-  char= prompt('How many characters does the password need to be(can be between 10 to 64 characters')
+
   
-  Upcase= confirm('Click OK if the password should contain upper case characters and Cancel if not')
   
-  Lowcase= confirm('Click OK if the password should contain lower case characters and Cancel if not')
+    for (;;) {  // infinite loop to ensure that the correct number of characters is entered
+         char = prompt("How many characters does the password need to be(can be between 10 to 64 characters:");
+      if (char >= 10 && char <= 64) {
+      // the number is within the valid range, so we can exit the loop
+        break;
+      }
+    // the number is not within the valid range, so we prompt the user to enter a different number
+      alert("The number must be between 10 and 64. Please try again.");
+  }
   
-  num= confirm('Click OK if the password should contain numbers and Cancel if not')
+     Upcase= confirm('Click OK if the password should contain upper case characters and Cancel if not')
+  
+     Lowcase= confirm('Click OK if the password should contain lower case characters and Cancel if not')
+  
+     num= confirm('Click OK if the password should contain numbers and Cancel if not')
  
-  spec= confirm('Click OK if the password should contain special characters and Cancel if not')
+     spec= confirm('Click OK if the password should contain special characters and Cancel if not')
   
  
 }
@@ -117,18 +128,22 @@ function getPasswordOptions() {
 // Function for getting a random element from an array
 
 function getRandom(arr) {
+  
   password += (arr[(Math.floor(Math.random() * arr.length))])
-  console.log(password)
+
 
 }
 
 // Function to generate password with user input
 function generatePassword() {
+
+  password = ''
   
   for (var i = 0; i < char;) { 
     
   
-   
+    
+
     if (Upcase === true && i < char){
     getRandom(upperCasedCharacters)
     
@@ -188,11 +203,8 @@ function writePassword() {
   passwordText = document.querySelector('#password');
  
   passwordText.value = password;
-  //console.log(password)
   
   
-  
-
   
   
 }
@@ -200,11 +212,13 @@ function writePassword() {
 
 getPasswordOptions();
 
+
 // Add event listener to generate button
+
 generateBtn.addEventListener('click', writePassword);
 
 
-//console.log(generatePassword.mypass)
+ 
 
 
 
@@ -213,10 +227,3 @@ generateBtn.addEventListener('click', writePassword);
 
 
 
-
-//pseudo code
-/* i need to collect the inputs from the end user for the criteria for the password (Done)
-then store these inputs (Done)
-then generate characters based on these inputs (Done)
-then put the characters together in one string
-then print the string for the end user when they click the generate button */
